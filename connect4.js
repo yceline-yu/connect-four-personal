@@ -20,17 +20,14 @@ let board = []; // array of rows, each row is array of cells  (board[y][x])
 //the js data for making the board
 function makeBoard(width,height) {
   // TODO: set "board" to empty HEIGHT x WIDTH matrix array
-  let rowArray = [];
+
   let boardArray = [];
-  let i = 0;
-  let j = 0;
-  while (i < width){
-    rowArray.push(null);
-    i++
-  }
-  while (j < height){
-    boardArray.push(rowArray);
-    j++
+  for(let y = 0; y < height; y++){
+    let rowArray = [];
+    for(let x = 0; x < width; x++){
+      rowArray.push(null);
+    }
+    boardArray.push(rowArray)
   }
 return boardArray;
 }
@@ -39,16 +36,16 @@ return boardArray;
 
 //the js for adding the board to the document
 function makeHtmlBoard() {
-  // TODO: get "htmlBoard" variable from the item in HTML w/ID of "board"
+  // get "htmlBoard" variable from the item in HTML w/ID of "board"
+  let htmlBoard = document.getElementById("board");
 
-  // TODO: add comment for this code, makes the table row element and assigns id, adds click function
-  var top = document.createElement("tr");
+  // makes the table row element and assigns id, adds click function
+  let top = document.createElement("tr");
   top.setAttribute("id", "column-top");
   top.addEventListener("click", handleClick);
 
-  // TODO: add comment for this code, sets the table data id, the id starts from 0 ends with 7, adds to
-  //can id start with numbers? nope, will need to fix
-  for (let x = 0; x < WIDTH; x++) { 
+  // sets the table data id, the id starts from 0 ends with 7, adds to
+  for (let x = 0; x < WIDTH; x++) {
     let headCell = document.createElement("td");
     headCell.setAttribute("id", x);
     top.append(headCell); //adds complete table data with id to table row
@@ -60,6 +57,7 @@ function makeHtmlBoard() {
   // uses WIDTH to create table cells for each row
   for (let y = 0; y < HEIGHT; y++) {
     // TODO: Create a table row element and assign to a "row" variable
+
 
     for (let x = 0; x < WIDTH; x++) {
       // TODO: Create a table cell element and assign to a "cell" variable
