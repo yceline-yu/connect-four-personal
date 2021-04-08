@@ -1,0 +1,26 @@
+make a table with a table header that has 7 cells
+and then 6 table rows with 7 cells
+add border to each cell, make them squares
+each "game piece" is just the background color of the cell with a radius that makes it a circle.
+each click will create the opposite color that was last played
+
+JS:
+create an object with the keys being each cells
+and the values being the state (blank, red, or blue)
+funciton playOnePiece() would
+
+
+FLOW:
+funciton playOnePiece()
+click on a cell of the header, and find the lowest row in that
+column that has a state of blank, and change its color to blue/red,
+whichever is the oppositeof what was last played.
+lastly, change currentColor to opposite color. use if statement
+
+function checkForWin()
+search in all 8 directions for the same color and stop if/when finds 4 in a row., and declares winner
+
+function createBoard() creates the html elements of the board
+
+variables:
+currentColor = color of the current piece
