@@ -98,6 +98,9 @@ function placeInTable(y, x) {
 
 function endGame(msg) {
   // TODO: pop up alert message
+  alert(msg);
+  makeBoard();
+  makeHtmlBoard();
 }
 
 /** handleClick: handle click of column top to play piece */
@@ -127,7 +130,7 @@ function handleClick(evt) {
   let tieCheck = board.flat().every(elem => !elem);
 
   if (tieCheck){
-    endGame();
+    endGame("Tie");
   }
 
   // switch players
